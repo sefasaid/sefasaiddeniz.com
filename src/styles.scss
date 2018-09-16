@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+@import "assets/argon";
+
+.main-section {
+  z-index: 2;
+}
+
+.card-image {
+  margin: 10px;
+  margin-top: -15px;
+  height: 200px;
+  width: calc(100% - 20px);
+  object-fit: cover;
+}
+.card-image-blog{
+  margin-top: -50px;
+  height: 500px;
+}
+.margin-top-3 {
+  margin-top: 3rem !important;
+}
+
+.shape-info {
+  background: linear-gradient(150deg, #11cdef 15%, #24adef 70%, #22a3ef 94%) !important;
+}
+
+.shape-primary {
+  background: linear-gradient(150deg, #5e72e4 15%, #4e5fbd 70%, #323d7a 94%) !important;
+}
+.shape-secondary {
+  background: linear-gradient(150deg, #f4f5f7 15%, #c8c9cb 70%, #8e8f90 94%) !important;
+}
+
+.shape-success {
+  background: linear-gradient(150deg, #2dce89 15%, #27ab70 70%, #208557 94%) !important;
+}
+.shape-danger {
+  background: linear-gradient(150deg, #f5365c 15%, #b32847 70%, #821e31 94%) !important;
+}
+.shape-warning {
+  background: linear-gradient(150deg, #fb6340 15%, #d55436 70%, #7e3520 94%) !important;
+}

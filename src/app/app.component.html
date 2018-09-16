@@ -1,20 +1,123 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<ngx-loading-bar></ngx-loading-bar>
+<header class="header-global">
+  <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-light headroom">
+    <div class="container">
+      <a class="navbar-brand mr-lg-5" routerLink="">
+        <img src="./assets/img/brand/logo.png">
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation" (click)="openModal(menuModal)">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <ul class="navbar-nav navbar-nav-hover align-items-lg-center" *ngIf="!isMobile">
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link" routerLink="blog" role="button">
+            <i class="ni ni-ui-04 d-lg-none"></i>
+            <span class="nav-link-inner--text">Blog</span>
+          </a>
 
+        </li>
+      </ul>
+      <ul class="navbar-nav align-items-lg-center ml-lg-auto" *ngIf="!isMobile">
+
+        <li class="nav-item">
+          <a class="nav-link nav-link-icon" href="https://github.com/sefasaid" target="_blank" data-toggle="tooltip" title="Github Da Yıldızlayın">
+            <i class="fa fa-github"></i>
+            <span class="nav-link-inner--text d-lg-none">Github</span>
+          </a>
+        </li>
+        <li class="nav-item d-none d-lg-block ml-lg-4">
+          <a href="mailto:sefasaiddeniz1@gmail.com" target="_blank" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fa fa-envelope mr-2"></i>
+                </span>
+            <span class="nav-link-inner--text">İletişime Geçin</span>
+          </a>
+        </li>
+      </ul>
+      <ng-template #menuModal>
+        <div class="navbar-collapse" id="navbar_global">
+          <div class="navbar-collapse-header">
+            <div class="row">
+              <div class="col-6 collapse-brand">
+                <a href="./index.html">
+                  <img src="./assets/img/brand/blue.png">
+                </a>
+              </div>
+              <div class="col-6 collapse-close">
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation" (click)="modalRef.hide()">
+                  <span></span>
+                  <span></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
+            <li class="nav-item dropdown">
+              <a href="#" class="nav-link" routerLink="blog" role="button">
+                <i class="ni ni-ui-04 d-lg-none"></i>
+                <span class="nav-link-inner--text">Blog</span>
+              </a>
+
+            </li>
+          </ul>
+          <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+
+            <li class="nav-item">
+              <a class="nav-link nav-link-icon" href="https://github.com/sefasaid" target="_blank" data-toggle="tooltip" title="Github Da Yıldızlayın">
+                <i class="fa fa-github"></i>
+                <span class="nav-link-inner--text d-lg-none">Github</span>
+              </a>
+            </li>
+            <li class="nav-item d-none d-lg-block ml-lg-4">
+              <a href="mailto:sefasaiddeniz1@gmail.com" target="_blank" class="btn btn-neutral btn-icon">
+                <span class="btn-inner--icon">
+                  <i class="fa fa-envelope mr-2"></i>
+                </span>
+                <span class="nav-link-inner--text">İletişime Geçin</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </ng-template>
+
+    </div>
+  </nav>
+</header>
+<router-outlet></router-outlet>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row row-grid align-items-center mb-5">
+      <div class="col-lg-6">
+        <h3 class="text-primary font-weight-light mb-2">Benimle iletişime geçmek için</h3>
+        <h4 class="mb-0 font-weight-light">bu yöntemleri kullanabilirsiniz.</h4>
+      </div>
+      <div class="col-lg-6 text-lg-center btn-wrapper">
+
+        <a target="_blank" href="mailto:sefasaiddeniz1@gmail.com" class="btn btn-neutral btn-icon-only btn-dribbble btn-lg btn-round" data-toggle="tooltip" data-original-title="Email At">
+          <i class="fa fa-envelope-square"></i>
+        </a>
+        <a target="_blank" href="https://github.com/sefasaid" class="btn btn-neutral btn-icon-only btn-github btn-round btn-lg" data-toggle="tooltip" data-original-title="Github'da Yıldız Ver">
+          <i class="fa fa-github"></i>
+        </a>
+      </div>
+    </div>
+    <hr>
+    <div class="row align-items-center justify-content-md-between">
+      <div class="col-md-6">
+        <div class="copyright">
+          &copy; 2018
+          <a href="http://sefasaiddeniz.com">Sefa Said Deniz</a>.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <ul class="nav nav-footer justify-content-end">
+
+          <li class="nav-item">
+            <a routerLink="blog" class="nav-link" target="_blank">Blog</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>

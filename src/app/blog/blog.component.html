@@ -1,0 +1,78 @@
+<main>
+  <div class="position-relative">
+    <!-- shape Hero -->
+    <section class="section section-lg section-shaped pb-250">
+      <div class="shape shape-style-1 shape-default">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="container py-lg-md d-flex">
+        <div class="col px-0">
+          <div class="row">
+            <div class="col-lg-6">
+              <h1 class="display-3  text-white">Blog
+                <span>Kendime notlar,kodlar ve fazlası</span>
+              </h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- SVG separator -->
+      <div class="separator separator-bottom separator-skew">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1"
+             xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-white" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </section>
+    <!-- 1st Hero Variation -->
+  </div>
+  <section class="section section-lg pt-lg-0 mt--200">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-12">
+          <div class="row row-grid">
+            <div class="col-lg-6 margin-top-3" *ngFor="let blog of blogs">
+              <div class="card card-lift--hover shadow border-0">
+                <img src="{{base_url + blog.image.url}}" alt="{{blog.title}}"
+                     class="img-fluid rounded shadow-lg card-image">
+                <div class="card-body py-5">
+                  <h6 ngClass="{{getType(blog.type,'text')}}" class=" text-uppercase">{{blog.title}}</h6>
+                  <p class="description mt-3">{{blog.short}}</p>
+                  <!--- Etiketler gelecek
+                  <div>
+                    <span class="badge badge-pill badge-primary">design</span>
+                    <span class="badge badge-pill badge-primary">system</span>
+                    <span class="badge badge-pill badge-primary">creative</span>
+                  </div>
+                   --->
+                  <a [routerLink]="['/blog/' + blog.sef]" ngClass="{{getType(blog.type,'btn')}}" class="btn  mt-4">Blog'a
+                    Git</a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-lg pt-lg-0 text-center">
+    <nav aria-label="Page navigation example" class="mb-4">
+      <ul class="pagination">
+        <li class="page-item" *ngFor="let page of counter(total_pages) ;let i = index"
+            ngClass="{{i + 1 == page ? '':'active'}}">
+          <a class="page-link" href="blog?page={{i+1}}">{{ i + 1 }}</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</main>
