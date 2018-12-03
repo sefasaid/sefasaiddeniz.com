@@ -14,7 +14,7 @@ export class BlogService {
 
   getBlogs(page) {
     const skip = (page - 1) * this.content_per_page;
-    return this.http.get(this.base_url + 'blog?_sort=_id:desc&_start=' + skip + '&_limit=' + this.content_per_page);
+    return this.http.get(this.base_url + 'blog?_sort=_id:DESC&_start=' + skip + '&_limit=' + this.content_per_page);
   }
 
   getCount() {

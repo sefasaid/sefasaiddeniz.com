@@ -84,7 +84,11 @@ export class BlogSingleComponent implements OnInit {
     });
   }
 
-  getType(blog_type, type) {
-    return type + '-' + blog_type;
+  getType(type) {
+    if (this.blog !== undefined && this.blog.type !== undefined) {
+      return type + '-' + this.blog.type;
+    } else {
+      return '';
+    }
   }
 }
